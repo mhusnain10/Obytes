@@ -1,0 +1,12 @@
+appId: com.obytes.development
+tags:
+  - util
+---
+- runFlow:
+    when:
+      visible: Obytes Starter
+    file: onboarding.yaml
+- runFlow:
+    when:
+      visible: Sign In
+    file: login.yaml

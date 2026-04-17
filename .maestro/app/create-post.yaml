@@ -1,0 +1,35 @@
+appId: com.obytes.development
+env:
+  Title: Post title
+  CONTENT:
+    "It is a long established fact that a reader will be distracted by the\
+    \ readable content of a page when looking at its layout. The point of using Lorem\
+    \ Ipsum is that it has a more-or-less normal distribution of letters, as opposed\
+    \ to using"
+---
+- launchApp
+- repeat:
+    times: 5
+    commands:
+      - waitForAnimationToEnd
+- runFlow: ../utils/onboarding-and-login.yaml
+- assertVisible: Feed
+- assertVisible: Create
+- tapOn: Create
+- assertVisible: Add Post
+- tapOn:
+    id: title
+- inputText: ${Title}
+- tapOn:
+    id: body-input
+- inputText: short content
+- tapOn:
+    id: add-post-button
+- assertVisible: "Too small: expected string to have >=120 characters"
+
+
+- inputText: ${CONTENT}
+
+- tapOn:
+    id: add-post-button
+- assertVisible: Post added successfully

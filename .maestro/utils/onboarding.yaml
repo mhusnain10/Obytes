@@ -1,0 +1,8 @@
+appId: com.obytes.development
+tags:
+  - util
+---
+- assertVisible: Obytes Starter
+- assertVisible: "Let's Get Started "
+- tapOn: "Let's Get Started "
+- assertVisible: Sign In
